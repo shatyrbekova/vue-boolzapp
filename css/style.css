@@ -49,7 +49,7 @@ header .header-container, .sidebar-header, .own-name, .chat-view-header, .chatVi
 .input-container{
     background-color: white;
 }
- input{
+ .input-container input{
      background-color: white;
     width:425px;
     background: url(../img/search.png) no-repeat;
@@ -70,3 +70,19 @@ input[type="text"]:focus{
 .app-chat-view{
     background: url(../img/mine.jpg) ;
 }
+
+footer{
+    background-color:#ececec;
+    height:80px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+ }
+ footer input{
+     width:750px;
+ }
+ footer > *{
+     margin-left: 15px;
+ }
