@@ -1,0 +1,21 @@
+/* body{
+    overflow-y: hidden;
+} */
+.section-fluid{
+    height:100%;
+    width:100%;
+    background-color:#ececec;
+    overflow-x: hidden;
+}
+ .section-fluid .topbar{
+    height:120px;
+    background-color: #128C7E;
+}
+
+.app-main{
+    border: 2px black solid;
+    position:relative;
+    bottom: 90px;
+    background-color: white;
+  
+}
