@@ -68,7 +68,16 @@ input[type="text"]:focus{
 }
 
 .app-chat-view{
-    background: url(../img/mine.jpg) ;
+    background: url(../img/mine.jpg);
+    border-right:10px white solid;
+    overflow:auto;
+}
+
+.box-send-msg{
+    background-color: #25d366 ;
+}
+.box-recieved-msg{
+    background-color: white;
 }
 
 footer{
@@ -78,6 +87,7 @@ footer{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+   
     
  }
  footer input{
