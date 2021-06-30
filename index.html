@@ -13,44 +13,80 @@
 <body>
 
   
-     <div id="app" class="section-fluid">
-         <div class="topbar"></div>
+    <div id="app" class="section-fluid">
+        <div class="topbar"></div>
+            <div class="container app-main">
+                <!-- Header -->
+                <header class="row">
 
-        <div class="container app-main">
+                    <div class="col-12 header-container">
+                        <div class="col-4">
+                            <!--//* Sidebar HEADER -->
+                        <div class="sidebar-header">
+                            <div class="own-name">
+                                 <img src="./img/avatar_io.jpg"  alt="">
+                                 <h5>Perizat</h5>
+                            </div>
+                            <div class="icon-ownName-container">
+                                <i class="fas fa-circle-notch"></i>
+                                <i class="fas fa-comment-alt"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-8">
+                     
+                            <div class="chat-view-header">
+                                <div class="chatView-userChat">
+                                    <img src="./img/avatar_1.jpg"  alt="">
+                                    <h5>Michele</h5>
+                               </div>
+                               <div>
+                                  <i class="fas fa-search"></i>
+                                   <i class="fas fa-paperclip"></i>
+                                   <i class="fas fa-ellipsis-v"></i>
+                               </div>
 
-             <!-- //! SIDEBAR with users name and img -->
-
-            <div class="col-4 app-sidebar">
-
-              
-                  <!--//* Sidebar HEADER -->
-                
-
-                   <!--//* Sidebar CHAT -->
-                    <div class="sidebar-chat">
-                        <div v-for="(user, index) in contacts">
-                        <img :src="user.avatar" alt="">
-                         {{user.name}} 
+                            </div>
                         </div>
                     </div>
-             </div>
+                </header>
+
+                <div class="row">
+
+                    <!-- //! SIDEBAR with users name and img -->
+
+                    <div class="col-4 app-sidebar">
+
+                        <div class="input-container">
+                            <input type="text" class="" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                        <!--//* Sidebar CHAT -->
+                        <div class="sidebar-chat">
+                            <div v-for="(user, index) in contacts">
+                            <img :src="user.avatar" alt="images">
+                                {{user.name}} 
+                            </div>
+                        </div>
+                    </div>
 
 
-             <!--!! CHAT VIEW-->
+                    <!--!! CHAT VIEW-->
 
-             <div class="col-8 app-chat-view">
-
-
-                
-                  <!-- //* Chat HEADER -->
-
-                  <!--//* Chat BODY -->
+                    <div class="col-8 app-chat-view">
 
 
-                  <!--//* Chat FOOTER -->
+                    
+                        <!-- //* Chat HEADER -->
 
+                        <!--//* Chat BODY -->
+
+
+                        <!--//* Chat FOOTER -->
+
+                    </div>
             </div>
-         </div>
+        </div>
 
     </div>
    

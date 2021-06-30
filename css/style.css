@@ -1,21 +1,72 @@
 /* body{
     overflow-y: hidden;
 } */
+
 .section-fluid{
-    height:100%;
-    width:100%;
-    background-color:#ececec;
-    overflow-x: hidden;
+   height: 100vh;
+   background-color:#ececec;
+    /* overflow-x: hidden; */
 }
  .section-fluid .topbar{
     height:120px;
     background-color: #128C7E;
 }
-
+   /* //! Container */
 .app-main{
     border: 2px black solid;
     position:relative;
     bottom: 90px;
     background-color: white;
-  
+}
+
+/* Header */
+header .header-container, .sidebar-header, .own-name, .chat-view-header, .chatView-userChat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header-container{
+    background-color:#ececec;
+}
+.sidebar-header{
+    justify-content: space-between;
+    border-right: 1px  solid rgb(192, 184, 184);
+}
+.sidebar-chat img, .sidebar-header img, .chatView-userChat img{
+    width:100px;
+    border-radius: 50%;
+}
+.chat-view-header{
+    justify-content: space-between;
+}
+.header-container i{
+    margin-left: 12px;
+}
+.icon-ownName-container:last-child{
+    margin-right: 18px;
+}
+
+.input-container{
+    background-color: white;
+}
+ input{
+     background-color: white;
+    width:425px;
+    background: url(../img/search.png) no-repeat;
+    padding-left: 35px;
+    background-size: 23px 23px;
+    background-position: 12px 3px;
+    border:none;
+    border-color:transparent;
+}
+
+input[type="text"]:focus{
+    outline: none;
+}
+.app-sidebar{
+    background-color: #fff8f8;
+}
+
+.app-chat-view{
+    background: url(../img/mine.jpg) ;
 }
