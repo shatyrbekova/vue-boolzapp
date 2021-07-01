@@ -41,11 +41,8 @@ header .header-container, .sidebar-header, .own-name, .chat-view-header, .chatVi
   border-bottom: 1px solid rgb(219, 214, 214);
   cursor:pointer;
 }
-.content-chat-user{
-  
 
-}
-.sidebar-chat:hover{
+.sidebar-chat .content-chat-user:hover{
     background-color: #cabfbf;
     border:0;
 }
@@ -110,7 +107,7 @@ input[type="text"]:focus{
     flex-basis: 50%;
     flex-grow: 1;
 }
-
+/* //!Main-chat-body */
 .box-send-msg {
     background-color: #dcf8c6;
     border-radius: 12px;

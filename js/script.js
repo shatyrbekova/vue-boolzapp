@@ -87,18 +87,32 @@ new Vue({
                         status: 'received'
                     }
                 ],
+                
             },
+            
         ],
-        
-        
+       
+        currentIndex: 0,
+       
 
     },
     methods:{
-       importImg: function(user){
-
-       }
-
-
+      
+       isCurrentIndex: function (index){
+           this.currentIndex =index;
+           return this.currentIndex
+       },
+       msgText: function(status){
+        if( status === 'sent'){
+            return true;
+        } 
+        else {
+            return false;
+        }
+    },
+      updateChatView: function(){
+         
+      }
     }
 
 }

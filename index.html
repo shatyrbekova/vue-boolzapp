@@ -73,10 +73,10 @@
                          
                         
                         <div class="input-container">
-                            <input type="text" class="" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" v-model="Search" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <!--//* Sidebar CHAT -->
-                        <div class="sidebar-chat">
+                        <div class="sidebar-chat" @click="updateChatView">
                             <div v-for="(user, index) in contacts" class="content-chat-user">
                             <img :src="user.avatar" alt="images">
                                 {{user.name}} 
@@ -95,10 +95,16 @@
                          <main>
                             
 
-                            <div class="main-chat-body">
-                                <div class="sender-container">
+                            <div class="main-chat-body" >
+                                <div class="sender-container" v-for="(msg,index) in contacts[currentIndex].messages" >
                                     <div class="box-send-msg">
-                                        <div class="send-msg">Hey</div>
+                                        <div class="send-msg" v-if="msgText(msg.status)">
+                                            {{msg.text}}
+            
+                                        </div>
+                                        <span class="message-time">
+                                            {{msg.date}}
+                                        </span>
                                     </div>
                                     
                                  </div>
@@ -106,12 +112,12 @@
 
                              <div>
                                  <div class="recevier-container">
-                                     <div class="box-recieved-msg">
+                                     <div class="box-recieved-msg" v-else>
                                         <div class="recieved-msg">
-                                            How are you doing Alessandro?
+                                            {{msg.text}}
                                         </div>
                                         <span class="message-time">
-                                            
+                                            {{msg.date}}
                                         </span>
                                      </div> 
                                      
