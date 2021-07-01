@@ -42,8 +42,10 @@
                                 <div class="chatView-userChat">
                                     <img src="./img/avatar_1.jpg"  alt="">
                                     <h5>Michele</h5>
+                                    <!--TODO <span>Ultimo accesso oggi alle</span> --> 
                                </div>
-                               <div>
+                               
+                               <div class="icons-view-header">
                                   <i class="fas fa-search"></i>
                                    <i class="fas fa-paperclip"></i>
                                    <i class="fas fa-ellipsis-v"></i>
@@ -59,7 +61,17 @@
                     <!-- //! SIDEBAR with users name and img -->
 
                     <div class="col-4 p-0 app-sidebar">
-
+                        <div class="notifications-container">
+                            <div class="icon-notification">
+                                <i class="fas fa-bell-slash"></i>
+                            </div>
+                            <div class="text-notifications">
+                                <div>Ricevi notifiche di nuovi messaggi</div>
+                                <a href="#">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                         
+                        
                         <div class="input-container">
                             <input type="text" class="" placeholder="Cerca o inizia una nuova chat">
                         </div>
@@ -80,19 +92,45 @@
 
 
                         <!--//* Chat BODY -->
-                       <main>
+                         <main>
+                            
 
-                       </main>
+                            <div>
+                                <div class="sender-container">
+                                    <div class="box-send-msg">
+                                        <div class="send-msg">Hey</div>
+                                    </div>
+                                    
+                            </div>
+                             </div>
+
+                             <div>
+                                 <div class="recevier-container">
+                                     <div class="box-recieved-msg">
+                                        <div class="recieved-msg">
+                                            How are you doing Alessandro?
+                                        </div>
+                                        <span class="message-time">
+                                            
+                                        </span>
+                                     </div> 
+                                     
+                                 </div>
+                             </div>
+                            
+                           
+                         </main>
 
                         <!--//* Chat FOOTER -->
                          <footer>
                               <div>
                                 <i class="far fa-smile"></i>
                               </div>
-                              <div>
-                                  <input type="text" placeholder="Scrivi un messaggio">
+                              <div class="input-typeMsg">
+                                  <textarea name="form-control" id="comment"  rows="1" placeholder="Scrivi un messaggio"></textarea>
+                                  <!-- <input type="text" placeholder="Scrivi un messaggio"> -->
                               </div>
-                              <div>
+                              <div class="icon-microphone">
                                 <i class="fas fa-microphone"></i>
                               </div>
                          </footer>
