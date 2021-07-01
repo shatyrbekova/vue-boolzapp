@@ -92,7 +92,8 @@ new Vue({
             
         ],
        
-        currentIndex: 0,
+        currentIndex: 0, //array di oggetti parte da 0
+        myNewMessage:'',
        
 
     },
@@ -100,19 +101,31 @@ new Vue({
       
        isCurrentIndex: function (index){
            this.currentIndex =index;
-           return this;
+        
        },
+       newMessageSend: function (){
+           let newMsgOggetto = {
+                date:'1/07/2021 16:54',
+                message: this.myNewMessage,
+                status: 'sent'
+           };
 
-       msgText: function(status){
+           this.contacts[this.currentIndex].messages.push(newMsgOggetto);
+           this.myNewMessage='';
+        
+           
+       }
 
-        if( status === 'sent'){
-            return true;
-        } 
-        // else {
-        //     return false;
-        // }
+    //    msgText: function(status){
 
-    },
+    //     if( status === 'sent'){
+    //         return true;
+    //     } 
+    //     // else {
+    //     //     return false;
+    //     // }
+
+    // },
     //   updateChatView: function(){
          
     //   }
