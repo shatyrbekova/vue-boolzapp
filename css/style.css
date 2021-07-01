@@ -33,6 +33,22 @@ header .header-container, .sidebar-header, .own-name, .chat-view-header, .chatVi
     width:100px;
     border-radius: 50%;
 }
+
+.sidebar-chat>*{
+
+  height: auto;
+  display:flex;
+  border-bottom: 1px solid rgb(219, 214, 214);
+  cursor:pointer;
+}
+.content-chat-user{
+  
+
+}
+.sidebar-chat:hover{
+    background-color: #cabfbf;
+    border:0;
+}
 .chat-view-header{
     justify-content: space-between;
 }
