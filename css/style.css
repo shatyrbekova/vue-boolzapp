@@ -99,6 +99,10 @@ input[type="text"]:focus{
 .app-sidebar{
     background-color: #fff8f8;
 }
+.main-chat-body{
+    overflow: auto;
+   
+}
 
 .app-chat-view{
     background: url(../img/mine.jpg);
@@ -110,7 +114,7 @@ input[type="text"]:focus{
 /* //!Main-chat-body */
 .box-send-msg {
     background-color: #dcf8c6;
-    border-radius: 12px;
+ 
    
 }
 
@@ -134,12 +138,13 @@ input[type="text"]:focus{
     font-size: 14px;
     display: inline-block;
     text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    border-radius: 12px;
 }
-.box-recieved-msg{
+/* .box-recieved-msg{
     background-color: white;
     border-radius: 12px;
   
-}
+} */
 
 footer{
     background-color:#ececec;
