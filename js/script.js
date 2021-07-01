@@ -100,19 +100,22 @@ new Vue({
       
        isCurrentIndex: function (index){
            this.currentIndex =index;
-           return this.currentIndex
+           return this;
        },
+
        msgText: function(status){
+
         if( status === 'sent'){
             return true;
         } 
-        else {
-            return false;
-        }
+        // else {
+        //     return false;
+        // }
+
     },
-      updateChatView: function(){
+    //   updateChatView: function(){
          
-      }
+    //   }
     }
 
 }
