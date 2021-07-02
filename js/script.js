@@ -103,9 +103,7 @@ new Vue({
         
 
     },
-    created(){
-         this.timer();
-    },
+ 
 
     methods:{
       
@@ -120,7 +118,7 @@ new Vue({
         if( status === 'sent'){
             return 'col-5 offset-6 box-send-msg'; //i messaggi di colore verde
         } 
-        else if( status === 'recevied') { 
+        else if( status === 'received') { 
             return 'col-4 offset-1 box-recevied-msg'; //i messaggi di colore bianco
         }
 
@@ -169,20 +167,11 @@ new Vue({
 
       
     },
-       selectContact: function(index,contact){
-           this.currentIndex=index;
-           
-       },
-    //    pcAnswer: function(){
-    //     let newMsgOggettoPc = {
-    //         date:  this.getCurrentDateTime(),
-    //         text:  'ok',
-    //         status: 'recevied'  
-    //    }
-
-    //    this.contacts[this.currentIndex].messages.push(newMsgOggettoPc);
-    //    this.pcNewMessage='';
+       selectContact: function(index){
+            
+         this.currentIndex =index;
         
-    // },
+        
+       },
     
     })

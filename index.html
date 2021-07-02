@@ -80,7 +80,7 @@
                         </div>
                         <!--//* Sidebar CHAT -->
                         <div class="sidebar-chat">
-                            <div v-for="(user, index) in contacts" class="content-chat-user">
+                            <div v-for="(user, index) in contacts" class="content-chat-user" @click="selectContact(index)">
                             <img :src="user.avatar" alt="images">
                                 {{user.name}} 
                             </div>
@@ -101,7 +101,7 @@
                             <div class="main-chat-body col-" >
                                 <div class="row">
 
-                                    <div class="col-" v-for="msg in contacts[currentIndex].messages" :class="msgText (msg.status)" @click="selectContact (index, contact)">
+                                    <div class="col-" v-for="msg in contacts[currentIndex].messages" :class="msgText (msg.status)" >
                                         <div class="row">
                                             <div class="col-">
                                                 <div> {{msg.text}}</div>
@@ -119,18 +119,20 @@
                          </main>
 
                         <!--//* Chat FOOTER -->
-                         <footer>
-                              <div>
-                                <i class="far fa-smile"></i>
-                              </div>
-                              <div class="input-typeMsg">
-                                  <textarea v-model=" myNewMessage" @keyup.enter="newMessageSend" name="form-control" id="comment"  rows="1" placeholder="Scrivi un messaggio" @></textarea>
-                                  <!-- <input type="text" placeholder="Scrivi un messaggio"> -->
-                              </div>
-                              <div class="icon-microphone">
-                                
-                                <i class="fas fa-microphone"></i>
-                              </div>
+                         <footer >
+  
+                                <div>
+                                    <i class="far fa-smile"></i>
+                                  </div>
+                                  <div class="input-typeMsg">
+                                      <textarea v-model=" myNewMessage" @keyup.enter="newMessageSend" name="form-control" id="comment"  rows="1" placeholder="Scrivi un messaggio" @></textarea>
+                                      <!-- <input type="text" placeholder="Scrivi un messaggio"> -->
+                                  </div>
+                                  <div class="icon-microphone">
+                                    
+                                    <i class="fas fa-microphone"></i>
+                                  </div>
+                         
                          </footer>
                     </div>
             </div>
