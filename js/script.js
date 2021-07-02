@@ -98,7 +98,6 @@ new Vue({
        
         currentIndex: 0, //Array di oggetti parte da 0, cioè il ciclo parte dalla posizione[0] che è Michele
         myNewMessage:'', //I miei msg 
-        intervalSlot: null,
         timerSlot: null,
         pcNewMessage:'',
         
@@ -115,17 +114,18 @@ new Vue({
         
        },
       
+       //per visualizzare lo status dei msg
        msgText: function(status){
 
         if( status === 'sent'){
-            return 'col-5 offset-6 box-send-msg';
+            return 'col-5 offset-6 box-send-msg'; //i messaggi di colore verde
         } 
         else if( status === 'recevied') { 
-            return 'col-4 offset-1 box-recevied-msg';
+            return 'col-4 offset-1 box-recevied-msg'; //i messaggi di colore bianco
         }
 
     },
-      getCurrentDateTime: function(){ //Per avere la datatime  usiamo day.js
+      getCurrentDateTime: function(){ //Per avere la datetime  usiamo day.js
             
         //creiamo una variabile costante
         const dateTimeNow = dayjs();
@@ -149,11 +149,11 @@ new Vue({
         //!setTimeOut risposta pc
           // In che modo l'interlocutore(pc) risponde ogni 1 sec?
           // Dove vengono pushati i msg del pc?
-          //
+          // Devo creare un oggetto?
 
 
          timer: function(){
-           this.timerSlot = setTimeout(()=>{
+            setTimeout(()=>{
             let newMsgOggettoPc = {
                 date:  this.getCurrentDateTime(),
                 text:  'ok',
@@ -169,7 +169,10 @@ new Vue({
 
       
     },
-       
+       selectContact: function(index,contact){
+           this.currentIndex=index;
+           
+       },
     //    pcAnswer: function(){
     //     let newMsgOggettoPc = {
     //         date:  this.getCurrentDateTime(),

@@ -101,7 +101,7 @@
                             <div class="main-chat-body col-" >
                                 <div class="row">
 
-                                    <div class="col-" v-for="msg in contacts[currentIndex].messages" :class="msgText (msg.status)">
+                                    <div class="col-" v-for="msg in contacts[currentIndex].messages" :class="msgText (msg.status)" @click="selectContact (index, contact)">
                                         <div class="row">
                                             <div class="col-">
                                                 <div> {{msg.text}}</div>
