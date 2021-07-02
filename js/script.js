@@ -1,18 +1,22 @@
 Vue.config.devtools = true;
 
+
+
+
 new Vue({
  
     el: '#app',
     data:{
+
         contacts: [
-            {
+            {//Array di dati utenti
                 name: 'Michele',
                 avatar: './img/avatar_1.jpg',
                 visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
-                        text: 'Hai portato a spasso il cane?',
+                        text: 'Hai portato a spasso il cane?', //I msg inviati da me che devono essere di colore verde
                         status: 'sent'
                     },
                     {
@@ -22,7 +26,7 @@ new Vue({
                     },
                     {
                         date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
+                        text: 'Tutto fatto!', //I msg ricevuti dai miei contatti che devono essere di colore bianco
                         status: 'received'
                     }
                 ],
@@ -92,45 +96,90 @@ new Vue({
             
         ],
        
-        currentIndex: 0, //array di oggetti parte da 0
-        myNewMessage:'',
-       
+        currentIndex: 0, //Array di oggetti parte da 0, cioè il ciclo parte dalla posizione[0] che è Michele
+        myNewMessage:'', //I miei msg 
+        intervalSlot: null,
+        timerSlot: null,
+        pcNewMessage:'',
+        
 
     },
+    created(){
+         this.timer();
+    },
+
     methods:{
       
        isCurrentIndex: function (index){
            this.currentIndex =index;
         
        },
-       newMessageSend: function (){
-           let newMsgOggetto = {
-                date:'1/07/2021 16:54',
-                message: this.myNewMessage,
-                status: 'sent'
-           };
+      
+       msgText: function(status){
 
-           this.contacts[this.currentIndex].messages.push(newMsgOggetto);
-           this.myNewMessage='';
-        
-           
+        if( status === 'sent'){
+            return 'col-5 offset-6 box-send-msg';
+        } 
+        else if( status === 'recevied') { 
+            return 'col-4 offset-1 box-recevied-msg';
+        }
+
+    },
+      getCurrentDateTime: function(){ //Per avere la datatime  usiamo day.js
+            
+        //creiamo una variabile costante
+        const dateTimeNow = dayjs();
+        //scriviamo il seguente codice, applicando format 
+        return dateTimeNow.format("DD/MM/YYYY HH:mm:ss");
+
+
+      },
+      newMessageSend: function (){
+        let newMsgOggetto = {
+             date:  this.getCurrentDateTime(),
+             text: this.myNewMessage,
+             status: 'sent'  
        }
 
-    //    msgText: function(status){
+       this.contacts[this.currentIndex].messages.push(newMsgOggetto);
+       this.myNewMessage='';
+       this.timer();   
+        },
 
-    //     if( status === 'sent'){
-    //         return true;
-    //     } 
-    //     // else {
-    //     //     return false;
-    //     // }
+        //!setTimeOut risposta pc
+          // In che modo l'interlocutore(pc) risponde ogni 1 sec?
+          // Dove vengono pushati i msg del pc?
+          //
 
+
+         timer: function(){
+           this.timerSlot = setTimeout(()=>{
+            let newMsgOggettoPc = {
+                date:  this.getCurrentDateTime(),
+                text:  'ok',
+                status: 'recevied'  
+           }
+           
+           this.contacts[this.currentIndex].messages.push(newMsgOggettoPc);
+           this.pcNewMessage='';
+           }, 1000)
+
+    
+      },
+
+      
+    },
+       
+    //    pcAnswer: function(){
+    //     let newMsgOggettoPc = {
+    //         date:  this.getCurrentDateTime(),
+    //         text:  'ok',
+    //         status: 'recevied'  
+    //    }
+
+    //    this.contacts[this.currentIndex].messages.push(newMsgOggettoPc);
+    //    this.pcNewMessage='';
+        
     // },
-    //   updateChatView: function(){
-         
-    //   }
-    }
-
-}
-   
-)
+    
+    })
