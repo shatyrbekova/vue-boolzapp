@@ -6,8 +6,9 @@ Vue.config.devtools = true;
 new Vue({
  
     el: '#app',
-    data:{
 
+    data:{
+        last_seen: 'Ultimo accesso',
         contacts: [
             {//Array di dati utenti
                 name: 'Michele',
@@ -100,18 +101,28 @@ new Vue({
         myNewMessage:'', //I miei msg 
         timerSlot: null,
         pcNewMessage:'',
-        
+        searchContactName:'',
+        searchContactList: [],
 
     },
- 
+    
+    computed:{
+    filteredUsers: function(){
+        return this.contacts.filter(item => {
+            return item.name.toLowerCase().indexOf(this.searchContactName.toLowerCase()) > -1
+         })
+   
+       
+    },
+    },
 
     methods:{
       
        isCurrentIndex: function (index){
-           this.currentIndex =index;
+           this.currentIndex = index;
         
        },
-      
+    
        //per visualizzare lo status dei msg
        msgText: function(status){
 
@@ -154,8 +165,8 @@ new Vue({
             setTimeout(()=>{
             let newMsgOggettoPc = {
                 date:  this.getCurrentDateTime(),
-                text:  'ok',
-                status: 'recevied'  
+                text:  'va bene',
+                status: 'received'  
            }
            
            this.contacts[this.currentIndex].messages.push(newMsgOggettoPc);
@@ -164,14 +175,16 @@ new Vue({
 
     
       },
+      selectContact: function(index1){
+       
+        this.currentIndex =index1;
+        console.log(this.currentIndex);
 
+         
+       },
       
     },
-       selectContact: function(index){
-            
-         this.currentIndex =index;
-        
-        
-       },
+       
+
     
     })

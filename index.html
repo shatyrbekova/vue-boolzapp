@@ -45,11 +45,13 @@
                                 <div class="chatView-userChat">
                                     <img src="./img/avatar_1.jpg"  alt="">
                                     <h5>Michele</h5>
-                                    <!--TODO <span>Ultimo accesso oggi alle</span> --> 
+                                    <span class="time-stamp">
+                                       Ultimo accesso
+                                    </span>  
                                </div>
                                
                                <div class="icons-view-header">
-                                  <i class="fas fa-search"></i>
+                                   <i class="fas fa-search"></i>
                                    <i class="fas fa-paperclip"></i>
                                    <i class="fas fa-ellipsis-v"></i>
                                </div>
@@ -76,11 +78,14 @@
                          
                         
                         <div class="input-container">
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" v-model="searchContactName" @keyup.enter="filteredUsers()" placeholder="Cerca o inizia una nuova chat" >
+                            
                         </div>
                         <!--//* Sidebar CHAT -->
                         <div class="sidebar-chat">
-                            <div v-for="(user, index) in contacts" class="content-chat-user" @click="selectContact(index)">
+
+                            <!-- //? perchè non funziona con | filterBy searchContactName in 'name' -->
+                            <div v-for="(user, index1) in filteredUsers"   class="content-chat-user" @click="selectContact(index1)" >
                             <img :src="user.avatar" alt="images">
                                 {{user.name}} 
                             </div>
